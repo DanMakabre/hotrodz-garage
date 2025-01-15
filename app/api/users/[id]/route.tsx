@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-interface Props {
-    params: { id: number }
-}
-
 export function GET(
     request: NextRequest, 
     { params }: { params: { id: number } }) {

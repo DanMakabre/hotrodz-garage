@@ -14,3 +14,14 @@ export async function GET(request: NextRequest) {
         { id: 5, name: "Pebbles Flintstone" }
     ]);
 }
+
+export async function POST(request: NextRequest) {
+    const body = await request.json();
+
+    // validate
+    if (!body.name) {
+        return NextResponse.json({ error: 'SHME! :I name required stupid.' }, { status: 400 });
+    }
+
+    return NextResponse.json({ id: 1, name: body.name });
+}
